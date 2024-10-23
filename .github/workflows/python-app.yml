@@ -37,7 +37,7 @@ jobs:
     - name: Deploy no EC2 - AWS
       run: |
             echo "Conectando no EC2"
-            echo "${{secrets.AWS_KEY_MATEUS_DAVI}}" > private_key && chmod 600 private_key 
+            echo "${{secrets.AWS_KEY_FLARE}}" > private_key && chmod 600 private_key 
             ssh -o StrictHostKeyChecking=no -i private_key ubuntu@ec2-35-171-98-209.compute-1.amazonaws.com "
                 cd FlareFlask/;git pull;./iniciarApp.sh"
     
